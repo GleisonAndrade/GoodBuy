@@ -30,7 +30,6 @@ public class UsuarioDao {
 
 	public void adiciona(Usuario usuario) {
 		this.session.save(usuario);
-		this.session.flush();
 	}
 
 	public Usuario carrega(Usuario usuario) {

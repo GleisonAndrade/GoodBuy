@@ -6,6 +6,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 
@@ -27,7 +28,6 @@ public class ProdutoDao {
 
 	public void salva(final Produto produto) {
 		session.saveOrUpdate(produto);
-		session.flush();
 	}
 
 	public Produto carrega(Long id) {
@@ -36,7 +36,6 @@ public class ProdutoDao {
 
 	public void remove(Produto produto) {
 		session.delete(produto);
-		session.flush();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -46,19 +45,16 @@ public class ProdutoDao {
 
 	public void atualiza(Produto produto) {
 		session.saveOrUpdate(produto);
-		session.flush();
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Produto> busca(String nome) {
-//		System.out.println("Entrei no DAO");
 		return session.createCriteria(Produto.class)
 				.add(Restrictions.ilike("nome", nome, MatchMode.ANYWHERE))
 				.list();
 	}
 
 	public void recarrega(Produto produto) {
-		System.out.println("recarrega");
 		session.refresh(produto);
 	}
 

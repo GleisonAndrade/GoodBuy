@@ -24,30 +24,12 @@ public class CarrinhoController {
 	}
 
 	@Inject
-	public CarrinhoController(Carrinho carrinho, ProdutoDao dao, Result result) {
+	public CarrinhoController(ProdutoDao dao, Result result, Carrinho carrinho) {
 		this.carrinho = carrinho;
 		this.dao = dao;
 		this.result = result;
 	}
 
-	// @Post("/carrinho")
-	// public void adiciona(Item item) {
-	// // System.out.println("Controller");
-	// dao.recarrega(item.getProduto());
-	// carrinho.adiciona(item);
-	// result.redirectTo(this).visualiza();
-	// }
-	//
-	// @Get
-	// @Path("/carrinho")
-	// public void visualiza() {
-	// }
-	//
-	// @Delete("/carrinho/{indiceItem}")
-	// public void remove(int indiceItem) {
-	// carrinho.remove(indiceItem);
-	// result.redirectTo(this).visualiza();
-	// }
 	@Post("/carrinho")
 	public void adiciona(Item item) {
 		dao.recarrega(item.getProduto());

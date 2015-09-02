@@ -17,8 +17,16 @@ ${produto.descricao }
 </textarea>
 			<label for="preco">Preço:</label> <input id="preco" type="text"
 				name="produto.preco" value="${produto.preco }" />
-			<!-- vvvvvvv vvv -->
 			<button type="submit" name="_method" value="PUT">Enviar</button>
+		</fieldset>
+	</form>
+
+	<form action="<c:url value="/produtos/${produto.id }/imagem"/>"
+		method="POST" enctype="multipart/form-data">
+		<fieldset>
+			<legend>Upload de Imagem</legend>
+			<input type="file" name="imagem" />
+			<button type="submit">Enviar</button>
 		</fieldset>
 	</form>
 </body>

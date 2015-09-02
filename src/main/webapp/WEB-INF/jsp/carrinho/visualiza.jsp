@@ -4,11 +4,12 @@
 <table>
 	<thead>
 		<tr>
-			<th>Nome</th>
-			<th>Descrição</th>
-			<th>Preço</th>
-			<th>Qtde</th>
-			<th>Total</th>
+			<th> Nome </th>
+			<th> Descrição </th>
+			<th> Preço </th>
+			<th> Qtde </th>
+			<th> Total </th>
+			<th> Remover </th>
 		</tr>
 	</thead>
 	<tbody>

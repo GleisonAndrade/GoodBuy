@@ -3,8 +3,10 @@ package br.ufpi.goodbuy.modelo;
 import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
 @SessionScoped
+@Named("usuarioWeb")
 public class UsuarioWeb implements Serializable{
 	/**
 	 * 

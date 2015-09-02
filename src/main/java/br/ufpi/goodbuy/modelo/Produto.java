@@ -13,7 +13,7 @@ import org.hibernate.validator.constraints.Length;
  *
  */
 @Entity
-public class Produto {
+public class Produto{
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -23,6 +23,12 @@ public class Produto {
 	private String descricao;
 	@Min(0) 
 	private Double preco;
+
+	@Override
+	public String toString() {
+		return "Produto [id=" + id + ", nome=" + nome + ", descricao="
+				+ descricao + ", preco=" + preco + "]";
+	}
 
 	public String getNome() {
 		return nome;

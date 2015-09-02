@@ -63,6 +63,7 @@ public class ProdutosController {
 	// result.redirectTo(this).lista();
 	// }
 
+	@Restrito
 	@Post("/produtos")
 	public void adiciona(final Produto produto) {
 		validator.validate(produto);
@@ -70,11 +71,13 @@ public class ProdutosController {
 		dao.salva(produto);
 		result.redirectTo(this).lista();
 	}
-
+	
+	@Restrito
 	@Get("/produtos/novo")
 	public void formulario() {
 	}
 
+	@Restrito
 	@Get("/produtos/{id}")
 	public Produto edita(Long id) {
 		return dao.carrega(id);
@@ -99,6 +102,7 @@ public class ProdutosController {
 	// result.redirectTo(this).lista();
 	// }
 
+	@Restrito
 	@Put("/produtos/{produto.id}")
 	public void altera(final Produto produto) {
 		validator.validate(produto);
@@ -107,6 +111,7 @@ public class ProdutosController {
 		result.redirectTo(this).lista();
 	}
 
+	@Restrito
 	@Delete("/produtos/{id}")
 	public void remove(Long id) {
 		Produto produto = dao.carrega(id);

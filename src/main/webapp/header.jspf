@@ -58,8 +58,10 @@ Você não está logado.
 	<div id="body">
 		<div id="menu">
 			<ul>
-				<li><a href="<c:url value="/produtos/novo"/>"> Novo Produto
-				</a></li>
+				<c:if test="${usuarioWeb.logado }">
+					<li><a href="<c:url value="/produtos/novo"/>"> Novo
+							Produto </a></li>
+				</c:if>
 				<li><a href="<c:url value="/produtos"/>"> Lista Produtos </a></li>
 				<li>
 					<form action="<c:url value="/produtos/busca"/>">

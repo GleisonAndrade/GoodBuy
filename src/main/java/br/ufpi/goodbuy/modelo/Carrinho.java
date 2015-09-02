@@ -3,12 +3,13 @@ package br.ufpi.goodbuy.modelo;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
 
 @SessionScoped
-public class Carrinho implements Serializable{
-/**
+@Named("carrinho")
+public class Carrinho implements Serializable {
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 2762226873360840208L;
@@ -32,7 +33,6 @@ public class Carrinho implements Serializable{
 	}
 
 	public void adiciona(Item item) {
-		System.out.println("ADICIONADA !");
 		itens.add(item);
 		total += item.getProduto().getPreco() * item.getQuantidade();
 	}
@@ -45,4 +45,5 @@ public class Carrinho implements Serializable{
 		Item removido = itens.remove(indiceItem);
 		total -= removido.getProduto().getPreco() * removido.getQuantidade();
 	}
+
 }
